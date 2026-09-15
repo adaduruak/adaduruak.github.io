@@ -1,10 +1,233 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ada Duru Ak — comparative politics and democracy." />
+  <title>Ada Duru Ak</title>
+
+  <style>
+    :root{
+      --navy:#0b1f33;
+      --navy-soft:#17324d;
+      --silver:#aab2bc;
+      --paper:#ffffff;
+      --ink:#1c2732;
+      --muted:#5e6873;
+      --line:#d9dee4;
+      --max:840px;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      background:var(--paper);
+      color:var(--ink);
+      font-family:"Times New Roman", Times, serif;
+      font-size:18px;
+      line-height:1.62;
+    }
+
+    .wrap{
+      width:min(calc(100% - 42px), var(--max));
+      margin:0 auto;
+    }
+
+    header{
+      background:var(--navy);
+      color:white;
+      padding:58px 0 34px;
+      border-bottom:1px solid #20374f;
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-size:2.5rem;
+      font-weight:400;
+      letter-spacing:.005em;
+    }
+
+    .subtitle{
+      margin:0;
+      max-width:720px;
+      color:#e6ebef;
+      font-size:1.02rem;
+    }
+
+    .links{
+      margin-top:22px;
+      font-size:.9rem;
+    }
+
+    .links a{
+      color:var(--silver);
+      text-decoration:none;
+      margin-right:18px;
+      border-bottom:1px solid #6f7f90;
+      padding-bottom:1px;
+    }
+
+    main{
+      padding:40px 0 56px;
+    }
+
+    section{
+      display:grid;
+      grid-template-columns:145px 1fr;
+      gap:32px;
+      padding:25px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    section:last-child{
+      border-bottom:0;
+    }
+
+    h2{
+      margin:2px 0 0;
+      color:var(--navy);
+      font-size:.82rem;
+      font-weight:400;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    p{margin-top:0}
+
+    .item + .item{
+      margin-top:19px;
+    }
+
+    .item-title{
+      color:var(--navy);
+      font-weight:600;
+    }
+
+    .item-meta{
+      margin-top:2px;
+      color:var(--muted);
+      font-size:.96rem;
+    }
+
+    .item-text{
+      margin:7px 0 0;
+    }
+
+    .skill-line{
+      margin:0 0 8px;
+    }
+
+    .skill-label{
+      color:var(--navy);
+      font-weight:600;
+    }
+
+    footer{
+      background:var(--navy);
+      color:var(--silver);
+      padding:20px 0 28px;
+      font-size:.78rem;
+    }
+
+    @media (max-width:650px){
+      header{padding-top:48px}
+      section{
+        grid-template-columns:1fr;
+        gap:10px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Hello, I'm Ada</h1>
-  <p>Welcome to my website!</p>
+  <header>
+    <div class="wrap">
+      <h1>Ada Duru Ak</h1>
+      <p class="subtitle">
+        Undergraduate at the University of Notre Dame studying Global Affairs and European Studies,
+        with interests in comparative politics, democracy, political parties, electoral institutions,
+        and European politics.
+      </p>
+
+      <div class="links">
+        <a href="mailto:aak@nd.edu">Email</a>
+        <a href="https://www.linkedin.com/in/adaduruak/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>Research</h2>
+      <div>
+        <div class="item">
+          <div class="item-title">University of Notre Dame</div>
+          <p class="item-text">
+            I work with Prof. Aníbal S. Pérez-Liñán on two projects: one on disproportionality
+            and democracy using CLEA data, and another on democratic backsliding.
+          </p>
+        </div>
+
+        <div class="item">
+          <div class="item-title">Johns Hopkins University · CROWN</div>
+          <div class="item-meta">Research Assistant</div>
+          <p class="item-text">
+            I work with the CROWN research team at the Johns Hopkins School of Nursing,
+            supporting recruitment and REDCap-based research on cardiovascular health among
+            Black and Hispanic women.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Advising</h2>
+      <div>
+        <div class="item">
+          <div class="item-title">Prof. Aníbal S. Pérez-Liñán</div>
+          <div class="item-meta">Research advisor · Kellogg Institute for International Studies</div>
+        </div>
+
+        <div class="item">
+          <div class="item-title">Dr. Erika Arias</div>
+          <div class="item-meta">APSA mentor · Institute for Genocide and Mass Atrocity Prevention, Binghamton University</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Presentations</h2>
+      <div>
+        <div class="item">
+          <div class="item-title">“Populist Party Success and Democratic Erosion in Central and Eastern Europe”</div>
+          <div class="item-meta">ISA's 4th Annual Virtual Conference: Order, Disorder, and Reordering · 2026</div>
+        </div>
+
+        <div class="item">
+          <div class="item-title">“Managing the Diaspora: Israeli State Strategy and the Institutional Politics of Diaspora Engagement”</div>
+          <div class="item-meta">8th Annual Undergraduate Scholars Conference in Israel Studies, UCLA Y&S Nazarian Center · 2026</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div>
+        <p class="skill-line">
+          <span class="skill-label">Software:</span>
+          R · Stata · Python · SPSS · ArcGIS · QGIS · Qualtrics · REDCap · Excel · Tableau · LaTeX / Overleaf · Zotero
+        </p>
+        <p class="skill-line">
+          <span class="skill-label">Languages:</span>
+          English · Turkish · Swedish · Norwegian · Finnish · French · Yiddish
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Ada Duru Ak</div>
+  </footer>
 </body>
 </html>
