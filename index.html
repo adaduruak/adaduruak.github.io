@@ -6,27 +6,38 @@
   <meta name="description" content="Ada Duru Ak — comparative politics and democracy." />
   <title>Ada Duru Ak</title>
 
+  <!-- Browser tab icon -->
+  <link rel="icon" type="image/jpeg" href="favicon.jpg" />
+
   <style>
     :root{
-      --navy:#0b1f33;
-      --navy-soft:#17324d;
-      --silver:#aab2bc;
-      --paper:#ffffff;
-      --ink:#1c2732;
-      --muted:#5e6873;
-      --line:#d9dee4;
+      --navy:#001A33;
+      --navy-light:#0D2A47;
+      --silver:#b8c0c8;
+      --silver-soft:#d8dde2;
+      --line:rgba(216,221,226,.18);
+      --white:#f7f9fb;
       --max:840px;
     }
 
-    *{box-sizing:border-box}
+    *{
+      box-sizing:border-box;
+      font-family:"Times New Roman", Times, serif !important;
+    }
 
+    html,
     body{
       margin:0;
-      background:var(--paper);
-      color:var(--ink);
-      font-family:"Times New Roman", Times, serif;
+      min-height:100%;
+      background:var(--navy);
+    }
+
+    body{
+      color:var(--silver-soft);
+      font-family:"Times New Roman", Times, serif !important;
       font-size:18px;
       line-height:1.62;
+      -webkit-font-smoothing:antialiased;
     }
 
     .wrap{
@@ -35,23 +46,23 @@
     }
 
     header{
-      background:var(--navy);
-      color:white;
-      padding:58px 0 34px;
-      border-bottom:1px solid #20374f;
+      padding:66px 0 38px;
+      border-bottom:1px solid var(--line);
     }
 
     h1{
       margin:0 0 10px;
-      font-size:2.5rem;
+      color:var(--white);
+      font-family:"Times New Roman", Times, serif;
+      font-size:2.55rem;
       font-weight:400;
-      letter-spacing:.005em;
+      letter-spacing:0;
     }
 
     .subtitle{
-      margin:0;
       max-width:720px;
-      color:#e6ebef;
+      margin:0;
+      color:var(--silver-soft);
       font-size:1.02rem;
     }
 
@@ -63,20 +74,25 @@
     .links a{
       color:var(--silver);
       text-decoration:none;
-      margin-right:18px;
-      border-bottom:1px solid #6f7f90;
+      margin-right:20px;
+      border-bottom:1px solid rgba(184,192,200,.55);
       padding-bottom:1px;
     }
 
+    .links a:hover{
+      color:var(--white);
+      border-bottom-color:var(--white);
+    }
+
     main{
-      padding:40px 0 56px;
+      padding:36px 0 58px;
     }
 
     section{
       display:grid;
       grid-template-columns:145px 1fr;
       gap:32px;
-      padding:25px 0;
+      padding:26px 0;
       border-bottom:1px solid var(--line);
     }
 
@@ -86,32 +102,36 @@
 
     h2{
       margin:2px 0 0;
-      color:var(--navy);
-      font-size:.82rem;
+      color:var(--silver);
+      font-family:"Times New Roman", Times, serif;
+      font-size:.86rem;
       font-weight:400;
       letter-spacing:.08em;
       text-transform:uppercase;
     }
 
-    p{margin-top:0}
+    p{
+      margin-top:0;
+    }
 
     .item + .item{
-      margin-top:19px;
+      margin-top:20px;
     }
 
     .item-title{
-      color:var(--navy);
+      color:var(--white);
       font-weight:600;
     }
 
     .item-meta{
       margin-top:2px;
-      color:var(--muted);
+      color:var(--silver);
       font-size:.96rem;
     }
 
     .item-text{
       margin:7px 0 0;
+      color:var(--silver-soft);
     }
 
     .skill-line{
@@ -119,19 +139,22 @@
     }
 
     .skill-label{
-      color:var(--navy);
+      color:var(--white);
       font-weight:600;
     }
 
     footer{
-      background:var(--navy);
+      padding:20px 0 30px;
+      border-top:1px solid var(--line);
       color:var(--silver);
-      padding:20px 0 28px;
       font-size:.78rem;
     }
 
     @media (max-width:650px){
-      header{padding-top:48px}
+      header{
+        padding-top:50px;
+      }
+
       section{
         grid-template-columns:1fr;
         gap:10px;
@@ -144,6 +167,7 @@
   <header>
     <div class="wrap">
       <h1>Ada Duru Ak</h1>
+
       <p class="subtitle">
         Undergraduate at the University of Notre Dame studying Global Affairs and European Studies,
         with interests in comparative politics, democracy, political parties, electoral institutions,
@@ -158,8 +182,10 @@
   </header>
 
   <main class="wrap">
+
     <section>
       <h2>Research</h2>
+
       <div>
         <div class="item">
           <div class="item-title">University of Notre Dame</div>
@@ -183,6 +209,7 @@
 
     <section>
       <h2>Advising</h2>
+
       <div>
         <div class="item">
           <div class="item-title">Prof. Aníbal S. Pérez-Liñán</div>
@@ -198,6 +225,7 @@
 
     <section>
       <h2>Presentations</h2>
+
       <div>
         <div class="item">
           <div class="item-title">“Populist Party Success and Democratic Erosion in Central and Eastern Europe”</div>
@@ -206,24 +234,27 @@
 
         <div class="item">
           <div class="item-title">“Managing the Diaspora: Israeli State Strategy and the Institutional Politics of Diaspora Engagement”</div>
-          <div class="item-meta">8th Annual Undergraduate Scholars Conference in Israel Studies, UCLA Y&S Nazarian Center · 2026</div>
+          <div class="item-meta">8th Annual Undergraduate Scholars Conference in Israel Studies, UCLA Y&amp;S Nazarian Center · 2026</div>
         </div>
       </div>
     </section>
 
     <section>
       <h2>Skills</h2>
+
       <div>
         <p class="skill-line">
           <span class="skill-label">Software:</span>
           R · Stata · Python · SPSS · ArcGIS · QGIS · Qualtrics · REDCap · Excel · Tableau · LaTeX / Overleaf · Zotero
         </p>
+
         <p class="skill-line">
           <span class="skill-label">Languages:</span>
           English · Turkish · Swedish · Norwegian · Finnish · French · Yiddish
         </p>
       </div>
     </section>
+
   </main>
 
   <footer>
