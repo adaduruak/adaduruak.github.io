@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Research — Ada Duru Ak"
+  />
+
   <title>Research · Ada Duru Ak</title>
 
+  <link
+    rel="icon"
+    type="image/jpeg"
+    href="favicon.jpg"
+  />
+
   <style>
+
     :root{
       --navy:#001A33;
       --silver:#b8c0c8;
@@ -20,9 +39,14 @@
       font-family:"Times New Roman", Times, serif;
     }
 
+    html,
     body{
       margin:0;
+      min-height:100%;
       background:var(--navy);
+    }
+
+    body{
       color:var(--silver-soft);
       font-size:18px;
       line-height:1.62;
@@ -41,12 +65,18 @@
     h1{
       margin:0;
       color:var(--white);
-      font-size:2.3rem;
+      font-size:2.4rem;
       font-weight:400;
     }
 
+    .subtitle{
+      margin:8px 0 0;
+      color:var(--silver-soft);
+    }
+
     nav{
-      margin-top:18px;
+      margin-top:20px;
+      font-size:.9rem;
     }
 
     nav a{
@@ -54,48 +84,162 @@
       text-decoration:none;
       margin-right:20px;
       border-bottom:1px solid rgba(184,192,200,.55);
+      padding-bottom:1px;
     }
 
     nav a:hover{
       color:var(--white);
+      border-bottom-color:var(--white);
     }
 
     main{
-      padding:40px 0 60px;
+      padding:38px 0 60px;
+    }
+
+    section{
+      padding:26px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    section:last-child{
+      border-bottom:0;
     }
 
     h2{
+      margin:0 0 10px;
       color:var(--white);
+      font-size:1.35rem;
       font-weight:400;
     }
+
+    .meta{
+      margin-bottom:10px;
+      color:var(--silver);
+      font-size:.95rem;
+    }
+
+    p{
+      margin-top:0;
+    }
+
+    footer{
+      padding:20px 0 30px;
+      border-top:1px solid var(--line);
+      color:var(--silver);
+      font-size:.78rem;
+    }
+
   </style>
+
 </head>
+
 
 <body>
 
   <header>
+
     <div class="wrap">
+
       <h1>Research</h1>
+
+      <p class="subtitle">
+        Research interests, projects, and ongoing work.
+      </p>
 
       <nav>
         <a href="index.html">Home</a>
         <a href="research.html">Research</a>
+        <a href="mailto:aak@nd.edu">Email</a>
+        <a
+          href="https://www.linkedin.com/in/adaduruak/"
+          target="_blank"
+          rel="noopener">
+          LinkedIn
+        </a>
       </nav>
+
     </div>
+
   </header>
 
+
   <main class="wrap">
-    <h2>Current Research</h2>
 
-    <p>
-      I am interested in comparative politics, democracy, political parties,
-      electoral institutions, and European politics.
-    </p>
+    <section>
 
-    <p>
-      More research projects coming soon.
-    </p>
+      <h2>Democratic Backsliding</h2>
+
+      <div class="meta">
+        University of Notre Dame
+      </div>
+
+      <p>
+        I work with Prof. Aníbal S. Pérez-Liñán on research concerning
+        democratic backsliding and democratic erosion.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>Electoral Disproportionality and Democracy</h2>
+
+      <div class="meta">
+        University of Notre Dame · CLEA data
+      </div>
+
+      <p>
+        This project examines electoral disproportionality and its relationship
+        with democratic institutions and outcomes using comparative electoral data.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>Populist Parties in Central and Eastern Europe</h2>
+
+      <div class="meta">
+        Conference research · 2026
+      </div>
+
+      <p>
+        My research examines relationships between populist party success
+        and democratic erosion in Central and Eastern Europe.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>Diaspora Politics</h2>
+
+      <div class="meta">
+        Undergraduate research · 2026
+      </div>
+
+      <p>
+        I have also worked on research concerning state strategy,
+        diaspora engagement, and the institutional politics surrounding
+        relationships between states and diaspora communities.
+      </p>
+
+    </section>
+
   </main>
 
+
+  <footer>
+
+    <div class="wrap">
+      © 2026 Ada Duru Ak
+    </div>
+
+  </footer>
+
 </body>
+
 </html>
