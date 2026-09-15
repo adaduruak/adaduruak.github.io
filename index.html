@@ -167,12 +167,15 @@
       width:122px;
       height:122px;
       flex:0 0 122px;
-      object-fit:cover;
-      object-position:center;
+      background-image:url("ada.jpg");
+      background-size:cover;
+      background-position:center;
       filter:grayscale(100%);
       -webkit-filter:grayscale(100%);
       border:1px solid rgba(216,221,226,.42);
       border-radius:4px;
+      user-select:none;
+      -webkit-user-select:none;
     }
 
     .text-link{
@@ -229,7 +232,7 @@
           </div>
         </div>
 
-        <img src="ada.jpg" alt="Ada Duru Ak" class="profile-photo" />
+        <div class="profile-photo" role="img" aria-label="Portrait of Ada Duru Ak"></div>
       </div>
     </div>
   </header>
