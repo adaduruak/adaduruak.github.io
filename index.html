@@ -150,9 +150,56 @@
       font-size:.78rem;
     }
 
+
+    .header-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:42px;
+    }
+
+    .header-copy{
+      flex:1;
+      min-width:0;
+    }
+
+    .profile-photo{
+      width:122px;
+      height:122px;
+      flex:0 0 122px;
+      object-fit:cover;
+      object-position:center;
+      filter:grayscale(100%);
+      -webkit-filter:grayscale(100%);
+      border:1px solid rgba(216,221,226,.42);
+      border-radius:4px;
+    }
+
+    .text-link{
+      color:inherit;
+      text-decoration:none;
+      border-bottom:1px solid rgba(184,192,200,.45);
+    }
+
+    .text-link:hover{
+      color:var(--white);
+      border-bottom-color:var(--white);
+    }
+
     @media (max-width:650px){
       header{
         padding-top:50px;
+      }
+
+      .header-row{
+        align-items:flex-start;
+        gap:24px;
+      }
+
+      .profile-photo{
+        width:92px;
+        height:92px;
+        flex-basis:92px;
       }
 
       section{
@@ -166,17 +213,23 @@
 <body>
   <header>
     <div class="wrap">
-      <h1>Ada Duru Ak</h1>
+      <div class="header-row">
+        <div class="header-copy">
+          <h1>Ada Duru Ak</h1>
 
-      <p class="subtitle">
-        Undergraduate at the University of Notre Dame studying Global Affairs and European Studies,
-        with interests in comparative politics, democracy, political parties, electoral institutions,
-        and European politics.
-      </p>
+          <p class="subtitle">
+            Undergraduate at the University of Notre Dame studying Global Affairs and European Studies,
+            with interests in comparative politics, democracy, political parties, electoral institutions,
+            and European politics.
+          </p>
 
-      <div class="links">
-        <a href="mailto:aak@nd.edu">Email</a>
-        <a href="https://www.linkedin.com/in/adaduruak/" target="_blank" rel="noopener">LinkedIn</a>
+          <div class="links">
+            <a href="mailto:aak@nd.edu">Email</a>
+            <a href="https://www.linkedin.com/in/adaduruak/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+
+        <img src="ada.jpg" alt="Ada Duru Ak" class="profile-photo" />
       </div>
     </div>
   </header>
@@ -196,7 +249,7 @@
         </div>
 
         <div class="item">
-          <div class="item-title">Johns Hopkins University · CROWN</div>
+          <div class="item-title"><a class="text-link" href="https://nursing.jhu.edu/faculty-research/research/projects/crown/#:~:text=Ada%20Duru%20Ak,aak1%40jh.edu" target="_blank" rel="noopener">Johns Hopkins University · CROWN</a></div>
           <div class="item-meta">Research Assistant</div>
           <p class="item-text">
             I work with the CROWN research team at the Johns Hopkins School of Nursing,
@@ -212,12 +265,12 @@
 
       <div>
         <div class="item">
-          <div class="item-title">Prof. Aníbal S. Pérez-Liñán</div>
+          <div class="item-title"><a class="text-link" href="https://politicalscience.nd.edu/people/anibal-perez-linan/" target="_blank" rel="noopener">Prof. Aníbal S. Pérez-Liñán</a></div>
           <div class="item-meta">Research advisor · Kellogg Institute for International Studies</div>
         </div>
 
         <div class="item">
-          <div class="item-title">Dr. Erika Arias</div>
+          <div class="item-title"><a class="text-link" href="https://www.binghamton.edu/i-gmap/people/postdocs.html" target="_blank" rel="noopener">Dr. Erika Arias</a></div>
           <div class="item-meta">APSA mentor · Institute for Genocide and Mass Atrocity Prevention, Binghamton University</div>
         </div>
       </div>
