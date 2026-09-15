@@ -2,36 +2,27 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8" />
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="Research — Ada Duru Ak"
+    content="Research interests and projects — Ada Duru Ak"
   />
 
   <title>Research · Ada Duru Ak</title>
 
-  <link
-    rel="icon"
-    type="image/jpeg"
-    href="favicon.jpg"
-  />
+  <link rel="icon" type="image/jpeg" href="favicon.jpg" />
 
   <style>
-
     :root{
       --navy:#001A33;
+      --navy-light:#0D2A47;
+      --navy-card:#061f39;
       --silver:#b8c0c8;
       --silver-soft:#d8dde2;
       --line:rgba(216,221,226,.18);
       --white:#f7f9fb;
-      --max:840px;
+      --max:940px;
     }
 
     *{
@@ -39,17 +30,17 @@
       font-family:"Times New Roman", Times, serif;
     }
 
-    html,
-    body{
-      margin:0;
-      min-height:100%;
-      background:var(--navy);
+    html{
+      scroll-behavior:smooth;
     }
 
     body{
+      margin:0;
+      background:var(--navy);
       color:var(--silver-soft);
       font-size:18px;
       line-height:1.62;
+      -webkit-font-smoothing:antialiased;
     }
 
     .wrap{
@@ -57,96 +48,415 @@
       margin:0 auto;
     }
 
-    header{
-      padding:56px 0 32px;
+    /* NAV */
+
+    nav{
+      padding:24px 0;
       border-bottom:1px solid var(--line);
+    }
+
+    .nav-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:30px;
+    }
+
+    .name{
+      color:var(--white);
+      text-decoration:none;
+      font-size:1.05rem;
+    }
+
+    .nav-links a{
+      position:relative;
+      margin-left:24px;
+      color:var(--silver);
+      text-decoration:none;
+      font-size:.9rem;
+    }
+
+    .nav-links a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-4px;
+      width:100%;
+      height:1px;
+      background:var(--white);
+      transform:scaleX(0);
+      transform-origin:left;
+      transition:transform .25s ease;
+    }
+
+    .nav-links a:hover{
+      color:var(--white);
+    }
+
+    .nav-links a:hover::after{
+      transform:scaleX(1);
+    }
+
+    /* HERO */
+
+    .hero{
+      padding:74px 0 42px;
+    }
+
+    .eyebrow{
+      margin:0 0 12px;
+      color:var(--silver);
+      font-size:.78rem;
+      letter-spacing:.15em;
+      text-transform:uppercase;
     }
 
     h1{
       margin:0;
+      max-width:760px;
       color:var(--white);
-      font-size:2.4rem;
+      font-size:clamp(3rem, 8vw, 5.7rem);
+      line-height:.96;
       font-weight:400;
+      letter-spacing:-.035em;
     }
 
-    .subtitle{
-      margin:8px 0 0;
+    .hero-text{
+      max-width:680px;
+      margin:28px 0 0;
       color:var(--silver-soft);
+      font-size:1.08rem;
     }
 
-    nav{
-      margin-top:20px;
-      font-size:.9rem;
+    /* LARGE IMAGE */
+
+    .hero-image{
+      position:relative;
+      height:440px;
+      margin:34px 0 70px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:4px;
+      opacity:0;
+      transform:translateY(20px);
+      animation:fadeUp .85s .15s ease forwards;
     }
 
-    nav a{
-      color:var(--silver);
-      text-decoration:none;
-      margin-right:20px;
-      border-bottom:1px solid rgba(184,192,200,.55);
-      padding-bottom:1px;
+    .hero-image img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      object-position:center;
+      filter:grayscale(100%) contrast(1.05);
+      transition:
+        transform 1s cubic-bezier(.2,.7,.2,1),
+        filter .6s ease;
     }
 
-    nav a:hover{
-      color:var(--white);
-      border-bottom-color:var(--white);
+    .hero-image:hover img{
+      transform:scale(1.035);
+      filter:grayscale(55%) contrast(1.04);
     }
 
-    main{
-      padding:38px 0 60px;
+    .hero-image::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(
+          to top,
+          rgba(0,26,51,.52),
+          transparent 55%
+        );
+      pointer-events:none;
     }
 
-    section{
-      padding:26px 0;
+    .image-caption{
+      position:absolute;
+      z-index:2;
+      bottom:18px;
+      left:20px;
+      margin:0;
+      color:rgba(247,249,251,.82);
+      font-size:.78rem;
+      letter-spacing:.03em;
+    }
+
+    /* INTRO */
+
+    .intro-grid{
+      display:grid;
+      grid-template-columns:170px 1fr;
+      gap:54px;
+      padding:0 0 64px;
       border-bottom:1px solid var(--line);
     }
 
-    section:last-child{
-      border-bottom:0;
-    }
-
-    h2{
-      margin:0 0 10px;
-      color:var(--white);
-      font-size:1.35rem;
-      font-weight:400;
-    }
-
-    .meta{
-      margin-bottom:10px;
+    .section-label{
       color:var(--silver);
-      font-size:.95rem;
+      font-size:.78rem;
+      letter-spacing:.13em;
+      text-transform:uppercase;
     }
 
-    p{
-      margin-top:0;
+    .intro-copy{
+      margin:0;
+      color:var(--white);
+      font-size:1.42rem;
+      line-height:1.48;
     }
+
+    /* RESEARCH INTERESTS */
+
+    .interests{
+      padding:62px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    .interest-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:12px;
+      margin-top:28px;
+    }
+
+    .interest{
+      min-height:120px;
+      padding:22px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.012);
+      display:flex;
+      align-items:flex-end;
+      color:var(--white);
+      transition:
+        transform .3s ease,
+        border-color .3s ease,
+        background .3s ease;
+    }
+
+    .interest:hover{
+      transform:translateY(-5px);
+      border-color:rgba(247,249,251,.36);
+      background:rgba(255,255,255,.035);
+    }
+
+    /* PROJECTS */
+
+    .projects{
+      padding:68px 0;
+    }
+
+    .project{
+      display:grid;
+      grid-template-columns:80px 1fr;
+      gap:36px;
+      padding:38px 0;
+      border-bottom:1px solid var(--line);
+
+      opacity:0;
+      transform:translateY(22px);
+      animation:fadeUp .8s ease forwards;
+    }
+
+    .project:nth-child(2){
+      animation-delay:.08s;
+    }
+
+    .project:nth-child(3){
+      animation-delay:.16s;
+    }
+
+    .project:nth-child(4){
+      animation-delay:.24s;
+    }
+
+    .project-number{
+      color:var(--silver);
+      font-size:.82rem;
+      letter-spacing:.08em;
+    }
+
+    .project h2{
+      margin:0;
+      color:var(--white);
+      font-size:1.8rem;
+      font-weight:400;
+      line-height:1.18;
+    }
+
+    .project-meta{
+      margin:8px 0 14px;
+      color:var(--silver);
+      font-size:.9rem;
+    }
+
+    .project p{
+      max-width:690px;
+      margin:0;
+    }
+
+    /* PRESENTATIONS */
+
+    .presentations{
+      padding:0 0 72px;
+    }
+
+    .presentation-title{
+      margin-bottom:25px;
+    }
+
+    .presentation{
+      display:grid;
+      grid-template-columns:80px 1fr;
+      gap:36px;
+      padding:22px 0;
+      border-top:1px solid var(--line);
+      transition:padding-left .25s ease;
+    }
+
+    .presentation:hover{
+      padding-left:8px;
+    }
+
+    .year{
+      color:var(--silver);
+      font-size:.88rem;
+    }
+
+    .presentation-name{
+      color:var(--white);
+    }
+
+    .presentation-meta{
+      margin-top:5px;
+      color:var(--silver);
+      font-size:.9rem;
+    }
+
+    /* FOOTER */
 
     footer{
-      padding:20px 0 30px;
+      padding:26px 0 34px;
       border-top:1px solid var(--line);
       color:var(--silver);
       font-size:.78rem;
     }
 
-  </style>
+    /* ANIMATIONS */
 
+    .hero .eyebrow,
+    .hero h1,
+    .hero-text{
+      opacity:0;
+      transform:translateY(18px);
+      animation:fadeUp .8s ease forwards;
+    }
+
+    .hero h1{
+      animation-delay:.08s;
+    }
+
+    .hero-text{
+      animation-delay:.16s;
+    }
+
+    @keyframes fadeUp{
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      *,
+      *::before,
+      *::after{
+        animation:none !important;
+        transition:none !important;
+        scroll-behavior:auto !important;
+      }
+
+      .project,
+      .hero-image,
+      .hero .eyebrow,
+      .hero h1,
+      .hero-text{
+        opacity:1;
+        transform:none;
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width:700px){
+
+      .nav-inner{
+        align-items:flex-start;
+        flex-direction:column;
+        gap:14px;
+      }
+
+      .nav-links a{
+        margin:0 17px 0 0;
+      }
+
+      .hero{
+        padding-top:54px;
+      }
+
+      .hero-image{
+        height:300px;
+        margin-bottom:50px;
+      }
+
+      .intro-grid{
+        grid-template-columns:1fr;
+        gap:15px;
+      }
+
+      .interest-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .project,
+      .presentation{
+        grid-template-columns:1fr;
+        gap:8px;
+      }
+    }
+
+    @media (max-width:470px){
+
+      .interest-grid{
+        grid-template-columns:1fr;
+      }
+
+      h1{
+        font-size:3.1rem;
+      }
+
+      .hero-image{
+        height:240px;
+      }
+    }
+
+  </style>
 </head>
 
 
 <body>
 
-  <header>
+  <!-- NAVIGATION -->
 
-    <div class="wrap">
+  <nav>
+    <div class="wrap nav-inner">
 
-      <h1>Research</h1>
+      <a class="name" href="index.html">
+        Ada Duru Ak
+      </a>
 
-      <p class="subtitle">
-        Research interests, projects, and ongoing work.
-      </p>
-
-      <nav>
+      <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="research.html">Research</a>
         <a href="mailto:aak@nd.edu">Email</a>
@@ -156,76 +466,282 @@
           rel="noopener">
           LinkedIn
         </a>
-      </nav>
+      </div>
 
     </div>
-
-  </header>
+  </nav>
 
 
   <main class="wrap">
 
-    <section>
+    <!-- HERO -->
 
-      <h2>Democratic Backsliding</h2>
+    <section class="hero">
 
-      <div class="meta">
+      <p class="eyebrow">
+        Research
+      </p>
+
+      <h1>
+        Democracy, institutions,
+        and political change.
+      </h1>
+
+      <p class="hero-text">
+        My research interests center on comparative politics,
+        democratic institutions, political parties, electoral systems,
+        democratic erosion, and European politics.
+      </p>
+
+    </section>
+
+
+    <!-- NOTRE DAME IMAGE -->
+
+    <div class="hero-image">
+
+      <img
+        src="nd.jpg"
+        alt="University of Notre Dame campus"
+      />
+
+      <p class="image-caption">
         University of Notre Dame
+      </p>
+
+    </div>
+
+
+    <!-- INTRO -->
+
+    <section class="intro-grid">
+
+      <div class="section-label">
+        Approach
       </div>
 
-      <p>
-        I work with Prof. Aníbal S. Pérez-Liñán on research concerning
-        democratic backsliding and democratic erosion.
+      <p class="intro-copy">
+        I am especially interested in how political institutions shape
+        democratic competition — and how parties, elections, and
+        institutional design can contribute to democratic resilience
+        or erosion.
       </p>
 
     </section>
 
 
-    <section>
+    <!-- INTERESTS -->
 
-      <h2>Electoral Disproportionality and Democracy</h2>
+    <section class="interests">
 
-      <div class="meta">
-        University of Notre Dame · CLEA data
+      <div class="section-label">
+        Research interests
       </div>
 
-      <p>
-        This project examines electoral disproportionality and its relationship
-        with democratic institutions and outcomes using comparative electoral data.
-      </p>
+      <div class="interest-grid">
+
+        <div class="interest">
+          Democracy
+        </div>
+
+        <div class="interest">
+          Democratic Backsliding
+        </div>
+
+        <div class="interest">
+          Political Parties
+        </div>
+
+        <div class="interest">
+          Electoral Institutions
+        </div>
+
+        <div class="interest">
+          Comparative Politics
+        </div>
+
+        <div class="interest">
+          European Politics
+        </div>
+
+      </div>
 
     </section>
 
 
-    <section>
+    <!-- PROJECTS -->
 
-      <h2>Populist Parties in Central and Eastern Europe</h2>
+    <section class="projects">
 
-      <div class="meta">
-        Conference research · 2026
+      <div class="section-label">
+        Current &amp; recent work
       </div>
 
-      <p>
-        My research examines relationships between populist party success
-        and democratic erosion in Central and Eastern Europe.
-      </p>
+
+      <article class="project">
+
+        <div class="project-number">
+          01
+        </div>
+
+        <div>
+
+          <h2>
+            Democratic Backsliding
+          </h2>
+
+          <div class="project-meta">
+            University of Notre Dame
+          </div>
+
+          <p>
+            I work with Prof. Aníbal S. Pérez-Liñán on research
+            concerning democratic backsliding and the processes
+            associated with democratic erosion.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="project">
+
+        <div class="project-number">
+          02
+        </div>
+
+        <div>
+
+          <h2>
+            Electoral Disproportionality
+            and Democracy
+          </h2>
+
+          <div class="project-meta">
+            University of Notre Dame · CLEA data
+          </div>
+
+          <p>
+            This project examines electoral disproportionality and
+            democratic outcomes using comparative electoral data.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="project">
+
+        <div class="project-number">
+          03
+        </div>
+
+        <div>
+
+          <h2>
+            Populist Party Success
+            and Democratic Erosion
+          </h2>
+
+          <div class="project-meta">
+            Central and Eastern Europe
+          </div>
+
+          <p>
+            My research examines relationships between populist party
+            success and democratic erosion in Central and Eastern
+            European political systems.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="project">
+
+        <div class="project-number">
+          04
+        </div>
+
+        <div>
+
+          <h2>
+            Diaspora Politics
+          </h2>
+
+          <div class="project-meta">
+            State strategy and diaspora engagement
+          </div>
+
+          <p>
+            I have also worked on questions involving state strategy,
+            diaspora engagement, and the institutional politics of
+            relationships between states and diaspora communities.
+          </p>
+
+        </div>
+
+      </article>
 
     </section>
 
 
-    <section>
+    <!-- PRESENTATIONS -->
 
-      <h2>Diaspora Politics</h2>
+    <section class="presentations">
 
-      <div class="meta">
-        Undergraduate research · 2026
+      <div class="section-label presentation-title">
+        Selected presentations
       </div>
 
-      <p>
-        I have also worked on research concerning state strategy,
-        diaspora engagement, and the institutional politics surrounding
-        relationships between states and diaspora communities.
-      </p>
+
+      <div class="presentation">
+
+        <div class="year">
+          2026
+        </div>
+
+        <div>
+
+          <div class="presentation-name">
+            “Populist Party Success and Democratic Erosion
+            in Central and Eastern Europe”
+          </div>
+
+          <div class="presentation-meta">
+            ISA's 4th Annual Virtual Conference:
+            Order, Disorder, and Reordering
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="presentation">
+
+        <div class="year">
+          2026
+        </div>
+
+        <div>
+
+          <div class="presentation-name">
+            “Managing the Diaspora: Israeli State Strategy and
+            the Institutional Politics of Diaspora Engagement”
+          </div>
+
+          <div class="presentation-meta">
+            8th Annual Undergraduate Scholars Conference in Israel Studies ·
+            UCLA Y&amp;S Nazarian Center
+          </div>
+
+        </div>
+
+      </div>
 
     </section>
 
@@ -241,5 +757,4 @@
   </footer>
 
 </body>
-
 </html>
